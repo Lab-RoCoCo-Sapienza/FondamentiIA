@@ -92,17 +92,8 @@ class frogger_game:
 
 
     def get_neighbors(self, v):
-        #save state
-        saved_state = (self.frog_pos, self.state_matrix)
         adjac_lis = []
-        for action in range (0, 5):
-            self.frog_pos = v
-            lose, win = self.step(action)
-            if not lose:
-                adjac_lis.append(( self.frog_pos, 1))
-                self.mapAState(self.frog_pos, self.state_matrix)
-                # restore state
-                self.frog_pos, self.state_matrix = saved_state
+        
         return adjac_lis
 
     def h(self, v): #H
